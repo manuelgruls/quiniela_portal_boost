@@ -1,0 +1,30 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/booskvbk/lpet.boost-up.mx"
+PassengerBaseURI "/"
+PassengerNodejs "/home/booskvbk/nodevenv/lpet.boost-up.mx/18/bin/node"
+PassengerAppType node
+PassengerStartupFile app.cjs
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+SetEnv APP_ENCRYPTION_KEY nEQz1ArpxLwo4OtKGSbjk/e85Wyhu1NbIIYI6cHkAfc=
+SetEnv APP_URL https://lpet.boost-up.mx
+SetEnv DB_HOST 127.0.0.1
+SetEnv DB_NAME booskvbk_bi_portal
+SetEnv DB_PASS uw85Q6EcWhmqVLr
+SetEnv DB_PORT 3306
+SetEnv DB_USER booskvbk_bi_user
+SetEnv NODE_ENV production
+SetEnv POWERBI_API_BASE https://api.powerbi.com/v1.0/myorg
+SetEnv POWERBI_AUTHORITY https://login.microsoftonline.com
+SetEnv POWERBI_RESOURCE https://analysis.windows.net/powerbi/api/.default
+SetEnv SESSION_SECRET Q5Lr2+d6a0cwCiw6O7YuCcgBSNKivCANHZS8T4vwfH4=
+SetEnv SETUP_TOKEN E18OTEejduzHuyWGcLOyuxvKcH6w5WkJDuP6ldLKz0
+SetEnv SMTP_HOST server223.web-hosting.com
+SetEnv SMTP_PORT 465
+SetEnv SMTP_USER noreply@boost-up.mx
+SetEnv SMTP_PASS K@izen2022
+SetEnv FROM_EMAIL noreply@boost-up.mx
+SetEnv FROM_NAME Boost Up BI Portal
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
