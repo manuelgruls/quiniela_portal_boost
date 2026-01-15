@@ -101,56 +101,64 @@ export default function DashboardPage() {
           <div className="lg:col-span-3 h-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full content-stretch">
               {/* Service Card 1: Development */}
-              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
-                <CardHeader>
-                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <Code className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg font-bold text-primary">Desarrollo a la Medida</CardTitle>
-                  <CardDescription>
-                    Portales web robustos y escalables adaptados a tus reglas de negocio.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="bg-gradient-to-br from-card/80 to-primary/5 rounded-2xl shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
+                <Card className="bg-transparent border-none shadow-none h-full">
+                  <CardHeader>
+                    <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                      <Code className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-primary">Desarrollo a la Medida</CardTitle>
+                    <CardDescription>
+                      Portales web robustos y escalables adaptados a tus reglas de negocio.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
 
               {/* Service Card 2: BI & Data */}
-              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
-                <CardHeader>
-                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <BarChart className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg font-bold text-primary">BI & Datos</CardTitle>
-                  <CardDescription>
-                    Tableros claros para la toma de decisiones y análisis en tiempo real.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="bg-gradient-to-br from-card/80 to-primary/5 rounded-2xl shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
+                <Card className="bg-transparent border-none shadow-none h-full">
+                  <CardHeader>
+                    <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                      <BarChart className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-primary">BI & Datos</CardTitle>
+                    <CardDescription>
+                      Tableros claros para la toma de decisiones y análisis en tiempo real.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
 
               {/* Service Card 3: AI & Queries */}
-              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
-                <CardHeader>
-                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <BrainCircuit className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg font-bold text-primary">IA & Consultas Inteligentes</CardTitle>
-                  <CardDescription>
-                    Agentes de IA que ejecutan tareas complejas por ti y agilizan la toma de decisiones. Hazle preguntas a tu información y obtén respuestas inmediatas sin tener que leer todos tus documentos.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="bg-gradient-to-br from-card/80 to-primary/5 rounded-2xl shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
+                <Card className="bg-transparent border-none shadow-none h-full">
+                  <CardHeader>
+                    <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                      <BrainCircuit className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-primary">IA & Consultas Inteligentes</CardTitle>
+                    <CardDescription>
+                      Agentes de IA que ejecutan tareas complejas por ti y agilizan la toma de decisiones. Hazle preguntas a tu información y obtén respuestas inmediatas sin tener que leer todos tus documentos.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
 
               {/* Service Card 4: Infrastructure */}
-              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
-                <CardHeader>
-                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <Server className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg font-bold text-primary">Infraestructura</CardTitle>
-                  <CardDescription>
-                    Servidores propios y entornos aislados para garantizar la máxima seguridad y privacidad de tu información.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="bg-gradient-to-br from-card/80 to-primary/5 rounded-2xl shadow-[0_0_15px_-3px_hsl(var(--primary)/0.15)] hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden">
+                <Card className="bg-transparent border-none shadow-none h-full">
+                  <CardHeader>
+                    <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                      <Server className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-primary">Infraestructura</CardTitle>
+                    <CardDescription>
+                      Servidores propios y entornos aislados para garantizar la máxima seguridad y privacidad de tu información.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
