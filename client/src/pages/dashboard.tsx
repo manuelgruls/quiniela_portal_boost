@@ -98,8 +98,8 @@ export default function DashboardPage() {
           </div>
 
           {/* Right Column - lg:col-span-3 */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="lg:col-span-3 h-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full content-stretch">
               {/* Service Card 1: Development */}
               <Card className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors h-full">
                 <CardHeader>
