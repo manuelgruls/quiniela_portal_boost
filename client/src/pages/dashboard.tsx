@@ -28,7 +28,7 @@ export default function DashboardPage() {
           {/* Left Column - lg:col-span-2 */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             {/* Quiniela Access Card */}
-            <Card className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors">
+            <Card className="bg-card rounded-2xl border border-white/10">
               <CardHeader>
                 <div className="flex items-center gap-4 mb-2">
                   <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -101,10 +101,10 @@ export default function DashboardPage() {
           <div className="lg:col-span-3 h-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full content-stretch">
               {/* Service Card 1: Development */}
-              <Card className="bg-gradient-to-br from-primary/10 via-card to-card rounded-2xl border border-primary/50 hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-300 h-full">
+              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_rgba(var(--primary),0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_rgba(var(--primary),0.4)] hover:-translate-y-1 transition-all duration-300 h-full">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <Code className="w-7 h-7 text-primary" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <Code className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-lg font-bold text-primary">Desarrollo a la Medida</CardTitle>
                   <CardDescription>
@@ -114,10 +114,10 @@ export default function DashboardPage() {
               </Card>
 
               {/* Service Card 2: BI & Data */}
-              <Card className="bg-gradient-to-br from-primary/10 via-card to-card rounded-2xl border border-primary/50 hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-300 h-full">
+              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_rgba(var(--primary),0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_rgba(var(--primary),0.4)] hover:-translate-y-1 transition-all duration-300 h-full">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <BarChart className="w-7 h-7 text-primary" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <BarChart className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-lg font-bold text-primary">BI & Datos</CardTitle>
                   <CardDescription>
@@ -127,10 +127,10 @@ export default function DashboardPage() {
               </Card>
 
               {/* Service Card 3: AI & Queries */}
-              <Card className="bg-gradient-to-br from-primary/10 via-card to-card rounded-2xl border border-primary/50 hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-300 h-full">
+              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_rgba(var(--primary),0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_rgba(var(--primary),0.4)] hover:-translate-y-1 transition-all duration-300 h-full">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <BrainCircuit className="w-7 h-7 text-primary" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <BrainCircuit className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-lg font-bold text-primary">IA & Consultas Inteligentes</CardTitle>
                   <CardDescription>
@@ -140,10 +140,10 @@ export default function DashboardPage() {
               </Card>
 
               {/* Service Card 4: Infrastructure */}
-              <Card className="bg-gradient-to-br from-primary/10 via-card to-card rounded-2xl border border-primary/50 hover:border-primary hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-300 h-full">
+              <Card className="bg-gradient-to-br from-card to-primary/5 rounded-2xl border border-primary/40 shadow-[0_0_15px_-3px_rgba(var(--primary),0.15)] hover:border-primary hover:shadow-[0_0_20px_-5px_rgba(var(--primary),0.4)] hover:-translate-y-1 transition-all duration-300 h-full">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                    <Server className="w-7 h-7 text-primary" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <Server className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-lg font-bold text-primary">Infraestructura</CardTitle>
                   <CardDescription>
