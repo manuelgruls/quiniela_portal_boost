@@ -1,26 +1,13 @@
-import { useQuery } from '@tanstack/react-query';
-import { ArrowRight, BarChart3 } from 'lucide-react';
-import * as LucideIcons from 'lucide-react';
+import { Code, BarChart, BrainCircuit, Server, Globe, Calendar, MessageCircle, Trophy, ExternalLink } from 'lucide-react';
 import { useLocation } from 'wouter';
-import type { Page } from '@shared/schema';
 import ProtectedLayout from '../components/layout/protected-layout';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/use-auth';
 
 export default function DashboardPage() {
   const [, setLocation] = useLocation();
   const { user } = useAuth();
-
-  const { data: userDashboards = [], isLoading } = useQuery<Page[]>({
-    queryKey: ['/api/user/dashboards'],
-  });
-
-  const getIcon = (iconName: string | null) => {
-    if (iconName && iconName in LucideIcons) {
-      return (LucideIcons as any)[iconName];
-    }
-    return LucideIcons.BarChart3;
-  };
 
   // Extract first name from full name
   const firstName = user?.fullName ? user.fullName.split(' ')[0] : '';
@@ -33,65 +20,139 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-bold text-foreground mb-2">
             Bienvenido(a) {firstName} a Portal BOOST
           </h1>
-          <p className="text-muted-foreground text-lg">Accede a tus dashboards y analiza los datos de tu organización</p>
+          <p className="text-muted-foreground text-lg">Tecnología impulsada por Boost. Transformamos datos en experiencias.</p>
         </div>
 
-        {/* Dashboards Grid */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-6">Tus tableros</h2>
-
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="bg-card rounded-2xl p-6 border border-border animate-pulse">
-                  <div className="h-6 bg-muted rounded w-3/4 mb-4"></div>
-                  <div className="h-4 bg-muted rounded w-full mb-2"></div>
-                  <div className="h-4 bg-muted rounded w-2/3"></div>
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          {/* Left Column - lg:col-span-2 */}
+          <div className="lg:col-span-2 flex flex-col gap-6">
+            {/* Quiniela Access Card */}
+            <Card className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/40 transition-colors">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Trophy className="w-8 h-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">Quiniela Mundial 2026</CardTitle>
                 </div>
-              ))}
-            </div>
-          ) : userDashboards.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {userDashboards.map((dashboard) => {
-                const IconComponent = getIcon(dashboard.icon);
-                return (
-                  <Card
-                    key={dashboard.id}
-                    className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors cursor-pointer group h-full"
-                    onClick={() => setLocation(`/dashboard/${dashboard.slug}`)}
-                    data-testid={`card-dashboard-${dashboard.slug}`}
-                  >
-                    <CardContent className="p-6 flex items-center justify-between h-full min-h-[160px]">
-                      <div className="flex items-center gap-6">
-                        <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                          <IconComponent className="w-8 h-8 text-primary" />
-                        </div>
-                        <h3 className="font-semibold text-foreground text-3xl leading-none pt-1">
-                          {dashboard.title}
-                        </h3>
-                      </div>
-                      <ArrowRight className="w-6 h-6 text-primary opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          ) : (
-            /* Empty State */
-            <Card className="bg-card rounded-2xl border border-dashed border-border">
-              <CardContent className="p-12 text-center">
-                <div className="w-16 h-16 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
-                  <BarChart3 className="w-8 h-8 text-muted-foreground" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2" data-testid="text-no-dashboards">
-                  No tienes tableros asignados
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Contacta a tu administrador para obtener acceso a los dashboards.
-                </p>
+                <CardDescription className="text-base">
+                  Accede al tablero de predicciones del Mundial y compite con otros participantes.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button
+                  size="lg"
+                  className="w-full"
+                  onClick={() => setLocation('/dashboard/quiniela')}
+                >
+                  Ir al Tablero del Mundial
+                </Button>
               </CardContent>
             </Card>
-          )}
+
+            {/* Contact Card - Call to Action */}
+            <Card className="bg-card rounded-2xl border border-border">
+              <CardHeader>
+                <CardTitle className="text-xl">¿Te interesa un proyecto así?</CardTitle>
+                <CardDescription>
+                  Contáctanos para llevar tu negocio al siguiente nivel con soluciones tecnológicas a la medida.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  asChild
+                >
+                  <a href="https://boost-up.mx" target="_blank" rel="noopener noreferrer">
+                    <Globe className="w-4 h-4" />
+                    Visitar Sitio Web
+                    <ExternalLink className="w-4 h-4 ml-auto" />
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  asChild
+                >
+                  <a href="https://calendly.com/manuelrul-boost-up/30min" target="_blank" rel="noopener noreferrer">
+                    <Calendar className="w-4 h-4" />
+                    Agendar Cita
+                    <ExternalLink className="w-4 h-4 ml-auto" />
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  asChild
+                >
+                  <a href="https://wa.me/3314852779" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp
+                    <ExternalLink className="w-4 h-4 ml-auto" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column - lg:col-span-3 */}
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Service Card 1: Development */}
+              <Card className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Code className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Desarrollo a la Medida</CardTitle>
+                  <CardDescription>
+                    Portales web robustos y escalables adaptados a tus reglas de negocio.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              {/* Service Card 2: BI & Data */}
+              <Card className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <BarChart className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">BI & Datos</CardTitle>
+                  <CardDescription>
+                    Tableros claros para la toma de decisiones y análisis en tiempo real.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              {/* Service Card 3: AI & Queries */}
+              <Card className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <BrainCircuit className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">IA & Consultas Inteligentes</CardTitle>
+                  <CardDescription>
+                    Agentes de IA que ejecutan tareas complejas por ti y agilizan la toma de decisiones. Hazle preguntas a tu información y obtén respuestas inmediatas sin tener que leer todos tus documentos.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              {/* Service Card 4: Infrastructure */}
+              <Card className="bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Server className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Infraestructura</CardTitle>
+                  <CardDescription>
+                    Servidores propios y entornos aislados para garantizar la máxima seguridad y privacidad de tu información.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </ProtectedLayout>
